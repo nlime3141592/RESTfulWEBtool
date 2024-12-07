@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <title>Index.html</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../css/index.css" />
+    </head>
+    <body>
+        <h1>RESTfulWEBtool</h1>
+
+        <div class="flex-container">
+            <div class="content-0">
+
+                <div class="flex-container">
+                    <div>
+                        <h2>Request</h2>
+                    </div>
+
+                    <div class="btn-request">
+                        <p>
+                            <!-- button id="btn_request_clear" disabled>초기화</button -->
+                            <button id="btn_request_send">요청</button>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="content-1">
+                    <h3>URL</h3>
+                    <input type="url" class="width-per100" id="input_url" placeholder="URL here...">
+                </div>
+
+                <div class="content-1">
+                    <h3>Resource Path</h3>
+                    <input type="url" class="width-per100" id="input_res" placeholder="resource path here...">
+                </div>
+
+                <div class="content-1">
+                    <h3>REST Method</h3>
+
+                    <select id="method">
+                        <option value="GET" id="method_GET" selected>GET</option>
+                        <option value="POST" id="method_POST">POST</option>
+                        <!-- NOTE: 이 곳에 다양한 RESTful Method를 추가할 수 있습니다. -->
+                    </select>
+                </div>
+
+                <div class="content-1">
+                    <h3>Variables</h3>
+                    <div>
+                        <table class="width-per100" id="table_request_variable">
+                            <tr>
+                                <th class="txt-align-left table-schema-0">Variable Name</th>
+                                <th class="txt-align-left table-schema-0">Value</th>
+                                <th class="txt-align-left width-45" id="btn_request_add_variable"><button>추가</button></th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-1">
+                    <h3>Request Header</h3>
+                    <div>
+                        <table class="width-per100" id="table_request_header">
+                            <tr>
+                                <th class="txt-align-left table-schema-0">Header Name</th>
+                                <th class="txt-align-left table-schema-0">Value</th>
+                                <th class="txt-align-left width-45" id="btn_request_add_header"><button>추가</button></th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-0">
+                <h2>Response</h2>
+
+                <div class="content-1">
+                    <h3>Status Code</h3>
+                    <p id="text_status_code"></p>
+                </div>
+
+                <div class="content-1">
+                    <h3>Response Header</h3>
+                    <div>
+                        <table class="width-per100" id="table_response">
+                            <tr>
+                                <th class="txt-align-left table-schema-0">Header Name</th>
+                                <th class="txt-align-left table-schema-0">Value</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-1">
+                    <h3>Response Body</h3>
+                    <p class="p-overflow-scroll height-max-450" id="body_response"></p>
+                </div>
+            </div>
+        </div>
+
+        <script src="../js/index.js"></script>
+    </body>
+</html>
