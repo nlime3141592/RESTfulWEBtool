@@ -101,3 +101,12 @@ body
     overflow-x: auto;
     overflow-y: auto;
 }
+
+.json-paragraph
+{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: auto;
+    display: block;
+    max-width: 100%;
+}

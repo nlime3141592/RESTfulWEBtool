@@ -149,30 +149,35 @@ function CreateRequestHeaders()
     return json
 }
 
-function CreateJsonApi()
-{
-    let object = {
-        url: CreateRequestUrl(),
-        method: CreateRequestMethod(),
-        headers: CreateRequestHeaders()
-    }
-
-    return JSON.stringify(object)
-}
-
 async function OnButtonClick_SendRequest()
 {
     let response = await fetch("/call_api", {
-        method: "POST",
+        method: "GET",
         headers: {
-            "Content-Type": "application/json"
-        },
-        body: CreateJsonApi()
+            "Content-Type": "application/json",
+            "requrl": CreateRequestUrl(),
+            "reqmethod": CreateRequestMethod(),
+            "reqheaders": CreateRequestHeaders()
+        }
     })
 
-    let responseJson = await response.json()
+    let responseBody = await response.json()
 
-    document.getElementById("text_status_code").textContent = responseJson.status
+    let status = responseBody["status"]
+    let statusText = responseBody["statusText"]
+    document.getElementById("text_status_code").innerText = `${status} ${statusText}`
+
+    function escapeHtml(string) {
+        return string
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+    let responseBodyStr = JSON.stringify(JSON.parse(responseBody["data"]), null, 2)
+    document.getElementById("body_response").innerHTML = `<pre>${escapeHtml(responseBodyStr)}</pre>`
 }
 
 function OnButtonClick_AddTableRow(event)

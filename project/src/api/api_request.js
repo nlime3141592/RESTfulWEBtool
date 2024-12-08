@@ -8,24 +8,40 @@ const utility = require("../utility.js")
 
 function __init(app)
 {
-    app.post("/call_api", __post_callApi)
+    app.get("/call_api", __get_callApi)
 }
 
-async function __post_callApi(req, res)
+async function __get_callApi(req, res)
 {
-    let data = req.body
+    let data = req.headers
 
-    let url = data.url
-    let method = data.method
-    let headers = JSON.parse(data.headers)
+    // console.log(JSON.stringify(data))
 
+    let url = data["requrl"]
+    let method = data["reqmethod"]
+    let headers = data["reqheaders"]
+
+    // NOTE: Response from API Server.
     let response = await axios.request(url, {
         method: method,
-        headers: headers
+        headers: JSON.parse(headers)
     })
 
-    json = JSON.stringify(response.data)
-    console.log(json)
+    // TEST: Logging for data is valid.
+    // console.log(JSON.stringify(response.status))
+    // console.log(JSON.stringify(response.statusText))
+    // console.log(response.data)
 
-    await res.json(json)
+    let responseBody = {
+        "status": response.status,
+        "statusText": response.statusText,
+        "data": JSON.stringify(response.data)
+    }
+
+    let responseBodyStr = JSON.stringify(responseBody)
+
+    // TEST: Logging for data is valid.
+    // console.log(responseBodyStr)
+
+    await res.json(responseBody)
 }
