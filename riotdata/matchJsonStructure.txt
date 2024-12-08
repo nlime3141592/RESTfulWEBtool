@@ -1,0 +1,20 @@
+metadata
+	dataVersion
+	matchId
+	participants
+info
+	endOfGameResult
+	gameCreation
+	gameDuration - 게임 진행 시간, 정수, 초 단위
+	gameEndTimestamp
+	gameId
+	gameMode
+	gameName
+	gameStartTimestamp
+	gameType
+	mapId
+	participants - 플레이어 단위 플레이 기록이 포함됨, 10명의 정보가 배열로 존재함
+	platformId
+	queueId
+	teams - 팀 단위 플레이 기록이 포함됨
+	tournamentCode
