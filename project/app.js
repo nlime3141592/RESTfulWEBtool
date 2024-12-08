@@ -7,6 +7,7 @@ const utility = require("./src/utility.js")
 
 // NOTE: 서버가 포함할 API 모듈 목록을 이 곳에 작성합니다.
 const api_main = require("./src/api/api_main.js")
+const api_request = require("./src/api/api_request.js")
 
 // NOTE: 상수
 const c_NUM_PORT = 8080
@@ -19,6 +20,7 @@ app.use(express.static(utility.getStaticDirectory()))
 
 // TODO: 이 곳에서 사용할 API 모듈을 초기화(init)합니다.
 api_main.init(app)
+api_request.init(app)
 
 app.listen(c_NUM_PORT, () => {
     utility.printLogWithName(`서버를 시작합니다. (http://localhost:${c_NUM_PORT})`, "System")

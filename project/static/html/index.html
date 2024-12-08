@@ -44,13 +44,26 @@
                 </div>
 
                 <div class="content-1">
-                    <h3>Variables</h3>
+                    <h3>Path Parameter</h3>
                     <div>
-                        <table class="width-per100" id="table_request_variable">
+                        <table class="width-per100" id="table_request_path_param">
                             <tr>
-                                <th class="txt-align-left table-schema-0">Variable Name</th>
+                                <th class="txt-align-left table-schema-0">Name</th>
                                 <th class="txt-align-left table-schema-0">Value</th>
-                                <th class="txt-align-left width-45" id="btn_request_add_variable"><button>추가</button></th>
+                                <th class="btn_add_table_row txt-align-left width-45"><button>추가</button></th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-1">
+                    <h3>Query Parameter</h3>
+                    <div>
+                        <table class="width-per100" id="table_request_query_param">
+                            <tr>
+                                <th class="txt-align-left table-schema-0">Name</th>
+                                <th class="txt-align-left table-schema-0">Value</th>
+                                <th class="btn_add_table_row txt-align-left width-45"><button>추가</button></th>
                             </tr>
                         </table>
                     </div>
@@ -61,9 +74,9 @@
                     <div>
                         <table class="width-per100" id="table_request_header">
                             <tr>
-                                <th class="txt-align-left table-schema-0">Header Name</th>
+                                <th class="txt-align-left table-schema-0">Name</th>
                                 <th class="txt-align-left table-schema-0">Value</th>
-                                <th class="txt-align-left width-45" id="btn_request_add_header"><button>추가</button></th>
+                                <th class="btn_add_table_row txt-align-left width-45"><button>추가</button></th>
                             </tr>
                         </table>
                     </div>
@@ -71,7 +84,12 @@
             </div>
 
             <div class="content-0">
-                <h2>Response</h2>
+
+                <div class="flex-container">
+                    <div>
+                        <h2>Response</h2>
+                    </div>
+                </div>
 
                 <div class="content-1">
                     <h3>Status Code</h3>
@@ -92,11 +110,12 @@
 
                 <div class="content-1">
                     <h3>Response Body</h3>
-                    <p class="p-overflow-scroll height-max-450" id="body_response"></p>
+                    <p class="content-2 p-overflow-scroll height-max-450" id="body_response"></p>
                 </div>
             </div>
         </div>
 
+        <script src="../js/uriparser.js"></script>
         <script src="../js/index.js"></script>
     </body>
 </html>

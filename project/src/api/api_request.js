@@ -11,9 +11,21 @@ function __init(app)
     app.post("/call_api", __post_callApi)
 }
 
-function __post_callApi(req, res)
+async function __post_callApi(req, res)
 {
-    res.sendFile(utility.getHtmlPath("./index.html"))
+    let data = req.body
 
-    axios.request()
+    let url = data.url
+    let method = data.method
+    let headers = JSON.parse(data.headers)
+
+    let response = await axios.request(url, {
+        method: method,
+        headers: headers
+    })
+
+    json = JSON.stringify(response.data)
+    console.log(json)
+
+    await res.json(json)
 }
