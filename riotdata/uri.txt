@@ -1,0 +1,8 @@
+puuid
+/riot/account/v1/accounts/by-riot-id/{gameName}/{tagLine}
+
+matchlist
+/lol/match/v5/matches/by-puuid/{puuid}/ids
+
+matches
+/lol/match/v5/matches/{matchId}
