@@ -1,0 +1,64 @@
+body
+{
+    background-color: antiquewhite;
+}
+
+.content-0
+{
+    background-color: azure;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 8px;
+    width: min-content;
+}
+
+.content-1
+{
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 8px;
+}
+
+.flex-container
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-field
+{
+    background-color: white;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.text-align-center
+{
+    text-align: center;
+}
+
+.width-px20
+{
+    width: 20px;
+}
+
+.label-header
+{
+    margin-left: 8px;
+}
+
+.width-per50
+{
+    width: 50%;
+}
+
+.width-per100
+{
+    width: 100%;
+}
+
+.font-px12
+{
+    font-size: 12px;
+}
