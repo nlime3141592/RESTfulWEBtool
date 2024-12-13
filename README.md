@@ -10,5 +10,5 @@
 ### riotdata
 - RIOT API를 이용해 수집한 데이터
 
-### riotstatictics
+### riotstatistics
 - 경기 결과의 플레이어별 세부 속성을 확인할 수 있는 전용 정적 페이지
